@@ -8,7 +8,7 @@ ADM_URL = "http://www.univ.kiev.ua/ua/geninf/adm/"
 page = get(URL)
 soup = BeautifulSoup(page.content, "html.parser")
 
-with open("univ_kiev.txt", "w", encoding="UTF=8") as file:
+with open("univer.txt", "w", encoding="UTF=8") as file:
     fac_list = soup.find(class_="b-references__holder")
     for li in fac_list.find_all("li"):
 

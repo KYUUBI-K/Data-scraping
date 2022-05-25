@@ -6,7 +6,7 @@ from sqlite3 import connect
 BASE_URL = "http://www.univ.kiev.ua"
 URL = f"{BASE_URL}/ua/departments"
 ADM_URL = "http://www.univ.kiev.ua/ua/geninf/adm/"
-connection = connect("univ_kiev.db")
+connection = connect("univer.db")
 cursor = connection.cursor()
 
 page = get(URL)
@@ -14,7 +14,7 @@ soup = BeautifulSoup(page.content, "html.parser")
 
 faculties = []
 
-with open("univ_kiev.txt", "w", encoding="UTF=8") as file:
+with open("univer.txt", "w", encoding="UTF=8") as file:
     fac_list = soup.find(class_="b-references__holder")
     for li in fac_list.find_all("li"):
 
